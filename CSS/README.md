@@ -289,3 +289,263 @@ Here, `#profile` targets that one unique container, while `.card` can be reused 
 - [ ] Learn more CSS properties as the course continues
 
 *These notes will be updated with new definitions and examples as I progress through the course.*
+
+## 10. Text alignment vs Flexbox alignment
+
+### `text-align`
+Aligns text inside an element. It does not centre the element's box itself.
+
+```css
+p {
+    text-align: center;
+}
+```
+
+### `justify-content`
+Positions flex items along the **main axis**.
+
+```css
+.container {
+    display: flex;
+    justify-content: center;
+}
+```
+
+With the default `flex-direction: row`, this centres items horizontally.
+
+### `align-items`
+Aligns flex items along the **cross axis**.
+
+```css
+.container {
+    display: flex;
+    align-items: center;
+}
+```
+
+With the default `flex-direction: row`, this aligns items vertically within the container's available cross-axis space.
+
+To centre items on both axes, use `display: flex`, `justify-content: center` and `align-items: center`. Give the container enough height for vertical centring to be visible. These flex properties require a flex container.
+
+## 11. Pixels (`px`) vs percentage (`%`)
+
+- **`px`:** a fixed CSS length unit. `width: 200px;` sets a width of 200 CSS pixels.
+- **`%`:** a relative value. `width: 50%;` usually means half the width of the containing block.
+
+```css
+.fixed-box { width: 200px; }
+.relative-box { width: 50%; }
+```
+
+Use percentages when a size should adapt to its container. The reference used for a percentage depends on the property.
+
+## 12. Borders and basic shapes
+
+The `border` property draws a border around an element.
+
+```css
+.box {
+    width: 200px;
+    height: 100px;
+    border: 2px solid black;
+}
+```
+
+In `border: 2px solid black;`:
+- `2px` is the thickness.
+- `solid` is the border style.
+- `black` is the border colour.
+
+Other styles include `dashed`, `dotted` and `double`. You can also set `border-width`, `border-style` and `border-color` separately.
+
+### Rectangle
+
+```css
+.rectangle {
+    width: 200px;
+    height: 100px;
+    background-color: aqua;
+    border: 2px solid black;
+}
+```
+
+### Square
+
+```css
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    border: 2px solid black;
+}
+```
+
+A square has equal width and height. A rectangle usually has different width and height.
+
+### Circle
+
+```css
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    border-radius: 50%;
+}
+```
+
+A circle can be made by applying `border-radius: 50%` to a square. Elements need visible dimensions and a background or border to be visible.
+
+## 13. Margin vs padding
+
+- **Margin:** space outside an element's border.
+- **Padding:** space inside the border, between content and border.
+
+```css
+.card {
+    margin: 20px;
+    padding: 16px;
+    border: 2px solid black;
+}
+```
+
+Here, `margin` separates the card from surrounding elements; `padding` creates space around the content inside the card.
+
+You can set individual sides with properties such as `margin-top` and `padding-left`. With two values, `margin: 10px 20px;` means 10px top/bottom and 20px left/right.
+
+## 14. Classes in HTML and CSS
+
+A **class** labels HTML elements so that the same styles can be reused on multiple elements.
+
+```html
+<div class="card">First card</div>
+<div class="card">Second card</div>
+```
+
+```css
+.card {
+    background-color: antiquewhite;
+    border: 1px solid gray;
+    padding: 16px;
+    margin: 10px;
+}
+```
+
+- In HTML, write `class="card"`.
+- In CSS, use a dot: `.card`.
+- Multiple elements can share the same class.
+- An element can have multiple classes separated by spaces, e.g. `class="card highlighted"`.
+- An `id` is intended to identify one unique element; a class is reusable.
+
+## 15. Flexbox basics
+
+**Flexbox** is a CSS layout system for arranging items in a row or column and controlling their alignment and spacing.
+
+```html
+<div class="container">
+    <div class="item">One</div>
+    <div class="item">Two</div>
+    <div class="item">Three</div>
+</div>
+```
+
+```css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+```
+
+- `display: flex;` creates a flex container; its direct children become flex items.
+- `justify-content` positions items along the main axis.
+- `align-items` aligns items along the cross axis.
+- `gap` adds space between items.
+- The default `flex-direction` is `row`. Use `flex-direction: column;` to arrange items vertically.
+- The main and cross axes depend on `flex-direction`.
+
+## 16. The `<main>` element and styling it with CSS
+
+### HTML `<main>`
+
+The `<main>` element represents the main, unique content of a webpage. It helps browsers, assistive technologies and developers identify the page's central content.
+
+```html
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+
+    <main>
+        <h2>About Me</h2>
+        <p>I am learning web development.</p>
+    </main>
+
+    <footer>
+        <p>Contact information</p>
+    </footer>
+</body>
+```
+
+- Use `<main>` for the central content of the page.
+- A page should normally have one visible `<main>` element.
+- Put site-wide navigation or introductory header content in suitable elements such as `<header>` and `<nav>`, rather than using `<main>` for everything.
+
+### Styling `<main>` with CSS
+
+In CSS, writing `main` selects HTML `<main>` elements. This is called a **type selector** (or element selector).
+
+```html
+<head>
+    <style>
+        main {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+```
+
+- `main` is the CSS selector.
+- `width: 80%;` sets the main element's width relative to its containing block.
+- `margin: 0 auto;` sets top/bottom margin to zero and distributes the available horizontal margin equally, centring the block when it has a width smaller than its container.
+- `padding: 20px;` adds space inside the element, around its content.
+- `background-color` sets its background colour.
+
+**Important difference:** `<main>` is an HTML element; `main { ... }` is a CSS rule that styles that element. The `<style>` element is where internal CSS rules are written inside an HTML document's `<head>`.
+
+## 17. Topics covered / being learned
+
+- [x] Inline, internal and external CSS
+- [x] CSS selector, property and value
+- [x] `text-align`, `font-size`, `width`, `color`, `background-color`
+- [x] CSS comments and universal selector `*`
+- [x] `margin`
+- [x] `id` and `class`
+- [x] `text-align` vs `justify-content`
+- [x] `align-items` basics
+- [x] `px` vs `%`
+- [x] Borders and basic shapes
+- [x] Margin vs padding
+- [x] Flexbox basics
+- [x] HTML `<main>` element and CSS `main` selector
+- [ ] Practise by creating a rectangle, square and centred flex container
+- [ ] Continue adding CSS topics as I learn them
+
+## Extra CSS Topics to Learn Later
+
+These are important CSS topics for future study. This section is a reminder only; add detailed notes and examples when each topic is covered in the course.
+
+- **CSS Box Model:** how content, padding, border and margin combine to determine an element's size and spacing.
+- **`display`:** controls how an element participates in layout, for example `block`, `inline`, `inline-block`, `flex` and `grid`.
+- **`position`:** controls positioning using values such as `static`, `relative`, `absolute`, `fixed` and `sticky`.
+- **Flexbox in depth:** wrapping, `flex-direction`, `flex-grow`, `flex-shrink`, `flex-basis` and alignment.
+- **CSS Grid:** a layout system for arranging items in rows and columns.
+- **Responsive design:** making layouts work across different screen sizes, including media queries.
+- **Pseudo-classes:** selectors for a state or condition, such as `:hover` and `:focus`.
+- **Pseudo-elements:** styling a specific part of an element, such as `::before` and `::after`.
+- **Specificity and the cascade:** how the browser decides which CSS rule applies when rules conflict.
+- **Transitions and animations:** creating visual changes and motion with CSS.
+
