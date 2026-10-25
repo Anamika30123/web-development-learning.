@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    width:100%;
+  
+}
+main{
+      display: flex;
+}
+div{
+width: 200px;
+height: 200px;
+
+}
+#box1{
+   
+    background-color: red;
+}
+#box2{
+    background-color: blue;
+}
+#box3{
+    background-color: green;
+}
