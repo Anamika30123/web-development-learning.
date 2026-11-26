@@ -1,0 +1,21 @@
+/* .box{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    background-color: lightblue;
+} */
+ /* .content{
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+ } */
+  div{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    background-color: rgb(47, 168, 208);
+}

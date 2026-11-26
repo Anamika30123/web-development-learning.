@@ -1,0 +1,11 @@
+arr=[1,5,7,9,10];
+n=arr.length;
+console.log(arr[4]);
+arr.push(12);
+console.log(arr);
+arr.pop();
+console.log(arr);
+arr.unshift(0);
+console.log(arr);
+arr.shift();
+console.log(arr); 

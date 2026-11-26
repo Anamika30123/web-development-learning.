@@ -1,0 +1,9 @@
+div{
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    color: white;
+    
+    background-color: rgb(8, 39, 49);
+
+}
